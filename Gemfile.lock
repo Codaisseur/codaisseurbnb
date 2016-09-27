@@ -40,6 +40,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.2)
+    autoprefixer-rails (6.4.0.1)
+      execjs
+    bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.9.1)
@@ -184,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 2.9, >= 2.9.1)
   coffee-rails (~> 4.2)
@@ -194,7 +201,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0)
   rspec-rails (~> 3.5, >= 3.5.2)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
