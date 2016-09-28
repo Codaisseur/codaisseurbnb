@@ -62,6 +62,14 @@
     <%= f.check_box :has_airco %> Air Conditioning
   </div>
 
+  <label>Themes</label>
+
+  <%= f.collection_check_boxes(:theme_ids, Theme.all, :id, :name) do |b| %>
+    <div class="form-group">
+      <%= b.check_box(class: "check_box") %> <%= b.object.name %>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <label>Nightly Price</label>
     <div class="input-group">
