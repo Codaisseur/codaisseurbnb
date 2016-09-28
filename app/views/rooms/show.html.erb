@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @room.listing_name %></div>
+
+  <div class="panel-body">
+
+    <p>Address: <%= @room.address %></p>
+    <p>Host: <%= @room.user.email %></p>
+
+    <!-- Main Info -->
+    <h4>Main Info</h4>
+    <p>Home Type: <%= @room.home_type %></p>
+    <p><%= @room.accommodate %> <%= @room.accommodate > 1 ? "Guests" : "Guest" %></p>
+    <p><%= @room.bedroom_count %> <%= @room.bedroom_count > 1 ? "Bedrooms" : "Bedroom" %></p>
+    <p><%= @room.bathroom_count %> <%= @room.bathroom_count > 1 ? "Bathrooms" : "Bathroom" %></p>
+
+    <!-- About -->
+    <h4>About</h4>
+    <p><%= @room.description %></p>
+
+    <!-- Amenities -->
+    <h4>Amenities</h4>
+    <ul class="amenities">
+      <li><%= !@room.has_tv ? ("<s>TV</s>").html_safe : "TV" %></li>
+      <li><%= !@room.has_kitchen ? ("<del>Kitchen</del>").html_safe : "Kitchen" %></li>
+      <li><%= !@room.has_internet ? ("<del>Internet</del>").html_safe : "Internet" %></li>
+      <li><%= !@room.has_heating ? ("<del>Heating</del>").html_safe : "Heating" %></li>
+      <li><%= !@room.has_airco ? ("<del>Air Conditioning</del>").html_safe : "Air Conditioning" %></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", rooms_path, class: "btn btn-default" %>

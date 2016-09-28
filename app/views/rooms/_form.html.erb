@@ -1,0 +1,83 @@
+<%= form_for @room do |f| %>
+  <% @room.errors.full_messages.each do |msg| %>
+    <p class="alert alert-danger"><%= msg %></p>
+  <% end %>
+
+  <div class="form-group">
+    <label>Home Type</label>
+    <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], id: "home_type", prompt: "Select home type", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Room Type</label>
+    <%= f.select :room_type, [["Entire","Entire"], ["Private", "Private"], ["Shared", "Shared"]], prompt: "Select room type", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Number of People</label>
+    <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6+", 6]], prompt: "Select number of people", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Bedrooms</label>
+    <%= f.select :bedroom_count, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], prompt: "Select number of bedrooms", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Bathrooms</label>
+    <%= f.select :bathroom_count, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], prompt: "Select number of bathrooms", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Listing name</label>
+    <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <%= f.text_area :description, rows: 5, placeholder: "Say something about your place", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <%= f.text_field :address, placeholder: "Address", class: "form-control" %>
+  </div>
+
+  <label>Amenities</label>
+
+  <div class="form-group">
+    <%= f.check_box :has_tv %> TV
+  </div>
+  <div class="form-group">
+    <%= f.check_box :has_kitchen %> Kitchen
+  </div>
+  <div class="form-group">
+    <%= f.check_box :has_internet %> Internet
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :has_heating %> Heating
+  </div>
+  <div class="form-group">
+    <%= f.check_box :has_airco %> Air Conditioning
+  </div>
+
+  <div class="form-group">
+    <label>Nightly Price</label>
+    <div class="input-group">
+      <div class="input-group-addon">€</div>
+      <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
+    </div>
+  </div>
+
+  <label>Publish this place?</label>
+
+  <div class="form-group">
+    <%= f.check_box :active %> Active
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Back", rooms_path, class: "btn btn-default" %>
+  </div>
+<% end %>

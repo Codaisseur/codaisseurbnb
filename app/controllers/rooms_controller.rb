@@ -28,7 +28,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to @room, notice: "Updated..."
+      redirect_to @room, notice: "Room successfully updated"
     else
       render :edit
     end
