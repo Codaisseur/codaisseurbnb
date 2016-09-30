@@ -18,6 +18,8 @@ gem 'devise'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'factory_girl_rails', '4.7.0'
+  gem 'faker', '1.6.6'
 end
 
 group :test do
