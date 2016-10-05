@@ -17,6 +17,9 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'devise'
 
+gem 'carrierwave'
+gem 'cloudinary'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
