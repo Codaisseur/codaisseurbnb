@@ -30,7 +30,11 @@
     <!-- Photos -->
     <h4>Photos</h4>
     <% @room.photos.each do |photo| %>
-      <%= image_tag photo.image %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= image_tag photo.image.thumbnail %>
+      </div>
+    </div>
     <% end %>
 
     <!-- Themes -->
