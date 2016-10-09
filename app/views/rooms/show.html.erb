@@ -27,6 +27,12 @@
       <li><%= !@room.has_airco ? ("<del>Air Conditioning</del>").html_safe : "Air Conditioning" %></li>
     </ul>
 
+    <!-- Photos -->
+    <h4>Photos</h4>
+    <% @room.photos.each do |photo| %>
+      <%= image_tag photo.image %>
+    <% end %>
+
     <!-- Themes -->
     <h4>Themes</h4>
     <% @themes.each do |theme| %>
