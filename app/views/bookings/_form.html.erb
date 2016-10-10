@@ -1,0 +1,24 @@
+<%= form_for [@room, @room.bookings.new] do |f| %>
+  <p><strong>Nightly Price:</strong> <span>€</span> <%= @room.price %></p>
+
+  <hr>
+
+  <div class="form-group">
+    <label>Check In:</label>
+    <%= f.date_select :starts_at %>
+  </div>
+
+  <div class="form-group">
+    <label>Check Out:</label>
+    <%= f.date_select :ends_at %>
+  </div>
+
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :price, value: @room.price %>
+
+  <hr>
+
+  <div class="actions">
+    <%= f.submit "Book Now", class: "btn btn-success" %>
+  </div>
+<% end %>

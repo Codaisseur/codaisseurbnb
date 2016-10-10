@@ -1,3 +1,15 @@
+<!-- Booking Form -->
+<% if current_user != @room.user %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Book this room</div>
+
+    <div class="panel-body">
+      <%= render 'bookings/form' %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Listing Information -->
 <div class="panel panel-primary">
   <div class="panel-heading"><%= @room.listing_name %></div>
 
