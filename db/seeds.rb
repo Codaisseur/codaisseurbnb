@@ -1,7 +1,8 @@
-User.delete_all
-Room.delete_all
-Theme.delete_all
+Booking.delete_all
 Photo.delete_all
+Theme.delete_all
+Room.delete_all
+User.delete_all
 
 # Themes
 modern_and_minimal = Theme.create(name: "Modern and Minimal")
