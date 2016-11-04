@@ -3,8 +3,12 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @room = @photo.room
 
-    @photo.destroy
+    @photo.destroy!
+    @photos = Photo.where(room_id: @room.id)
 
-    redirect_to edit_room_path(@room), notice: "Photo successfully removed"
+    respond_to do |format|
+      format.html { redirect_to room_path(@room) }
+      format.js # render songs/create.js.erb
+    end
   end
 end
