@@ -5,15 +5,14 @@
 
   <div class="form-group">
     <label>Check In:</label>
-    <%= f.date_select :starts_at %>
+    <%= f.text_field :starts_at %>
   </div>
 
   <div class="form-group">
     <label>Check Out:</label>
-    <%= f.date_select :ends_at %>
+    <%= f.text_field :ends_at %>
   </div>
 
-  <%= f.hidden_field :room_id, value: @room.id %>
   <%= f.hidden_field :price, value: @room.price %>
 
   <hr>
@@ -22,3 +21,17 @@
     <%= f.submit "Book Now", class: "btn btn-success" %>
   </div>
 <% end %>
+
+<script>
+  $(function() {
+
+    $('#booking_starts_at').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+
+    $('#booking_ends_at').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+
+    });
+</script>

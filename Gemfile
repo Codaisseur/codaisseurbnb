@@ -22,6 +22,8 @@ gem 'cloudinary'
 
 gem 'rails_12factor', group: :production
 
+gem 'jquery-ui-rails'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
