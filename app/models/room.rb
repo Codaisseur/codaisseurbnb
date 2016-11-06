@@ -28,4 +28,9 @@ class Room < ApplicationRecord
 
     true
   end
+
+  def current_and_future_bookings
+    today = Date.today
+    bookings.where("starts_at >= ? OR ends_at >= ?", today, today)
+  end
 end

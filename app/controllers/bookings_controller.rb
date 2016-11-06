@@ -17,6 +17,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def preload
+    room = Room.find(booking_params[:room_id])
+    bookings = room.current_and_future_bookings
+
+    render json: bookings
+  end
+
   private
 
   def total_price(checkin, checkout, price)
@@ -25,6 +32,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:starts_at, :ends_at, :price)
+    params.require(:booking).permit(:starts_at, :ends_at, :price, :room_id)
   end
 end
