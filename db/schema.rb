@@ -101,4 +101,6 @@ ActiveRecord::Schema.define(version: 20161009140441) do
   add_foreign_key "bookings", "rooms"
   add_foreign_key "bookings", "users"
   add_foreign_key "photos", "rooms"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "rooms", "users"
 end
